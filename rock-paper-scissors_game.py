@@ -41,29 +41,12 @@ while True:
   computer_number = choice_list.index(computer_choice)
   print(f"\nYour choice:\n{choice_list[player_number]}\n\nComputer choice:\n{computer_choice}\n")
   
-  if player_number == 0:
-    if computer_number == 0:
-      print("You have a draw!")
-    if computer_number == 1:
+  if player_number == computer_number:
+  	print("You have a draw!")
+  elif (player_number == 0 and computer_number == 2) or (player_number == 1 and computer_number == 0) or (player_number == 2 and computer_number == 1):
+  	print("You've won!")
+  else:
       print("You've lost!")
-    if computer_number == 2:
-      print("You've won!")
-
-  if player_number == 1:
-    if computer_number == 0:
-      print("You've won!")
-    if computer_number == 1:
-      print("You have a draw!")
-    if computer_number == 2:
-      print("You've lost!")
-
-  if player_number == 2:
-    if computer_number == 0:
-      print("You've lost!")
-    if computer_number == 1:
-      print("You've won!")
-    if computer_number == 2:
-      print("You have a draw!")
   
   continue_game = input("\nDo you want to play some more? 0 - I WANT MORE, 1 - exit\n>")
   if continue_game == "1":
