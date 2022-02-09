@@ -28,7 +28,6 @@ def game():
   while game_status:
     print(logo)
     A = B
-    B = take_data()
     while A == B:
       B = take_data()
     print(f"Compare A: {format_data(A)}\nFollowers - {A['follower_count']} millions")
