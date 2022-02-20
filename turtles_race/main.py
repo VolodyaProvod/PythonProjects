@@ -16,8 +16,9 @@ for i in range(6):
     new_turtle.color(colors[i])
     turtles.append(new_turtle)
 
-if user_bet:
+if user_bet in colors:
     race_is_on = True
+
 
 while race_is_on:
     for turtle in turtles:
