@@ -1,5 +1,5 @@
 from turtle import Turtle
-
+SCORE_FONT = ("Courier", 80, "normal")
 
 class ScoreBoard(Turtle):
 
@@ -23,9 +23,9 @@ class ScoreBoard(Turtle):
     def write_score(self):
         self.clear()
         self.goto(-100, 190)
-        self.write(self.l_score, align="center", font=("Courier", 80, "normal"))
+        self.write(self.l_score, align="center", font=SCORE_FONT)
         self.goto(100, 190)
-        self.write(self.r_score, align="center", font=("Courier", 80, "normal"))
+        self.write(self.r_score, align="center", font=SCORE_FONT)
 
     def l_wins(self):
         self.goto(0, 0)
