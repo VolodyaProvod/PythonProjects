@@ -18,6 +18,8 @@ while correct_answers < 50:
     answer_state = screen.textinput(title="Guess the State",
                                     prompt=f"{correct_answers}/50 is Correct\nWhat's another state's name?", ).title()
     if answer_state == "Exit":
+        to_learn = pandas.DataFrame(states)
+        to_learn.to_csv("states_to_learn.csv")
         break
     elif answer_state in states:
         correct_answers += 1
