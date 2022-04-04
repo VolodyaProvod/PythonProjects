@@ -38,10 +38,12 @@ stok_parameters = {
 }
 response = requests.get(url=ALPHAVANTAGE_ENDPOINT, params=stok_parameters)
 response.raise_for_status()
+data = response.json()["Time Series (Daily)"]
+data_list = [value for(key, value) in data.items()]
 
 
-data_yestadray = float(response.json()["Time Series (Daily)"][past_date_in_string(1)]["4. close"])
-data_before_yestadray = float(response.json()["Time Series (Daily)"][past_date_in_string(2)]["4. close"])
+data_yestadray = float(data_list[0]["4. close"])
+data_before_yestadray = float(data_list[1]["4. close"])
 changes_on_the_exchange = round(get_change(data_yestadray, data_before_yestadray), 2)
 text = f"{STOCK}: "
 if changes_on_the_exchange > 0:
