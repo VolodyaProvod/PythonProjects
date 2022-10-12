@@ -1,1 +1,3 @@
-print(2014.0 ** 14)
+import sys
+
+print(*sys.argv[1:])

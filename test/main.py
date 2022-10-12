@@ -16,14 +16,7 @@ def plural_days(n):
 
     return str(n) + ' ' + days[p]
 
-tesak_image = ["https://im.wampi.ru/2022/09/13/757000.jpg", "https://ie.wampi.ru/2022/09/13/xFA-gj6cE_A.jpg",
-               "https://im.wampi.ru/2022/09/13/756003194042270.jpg",
-               "https://im.wampi.ru/2022/09/13/4082896_8430780.jpg", "https://ie.wampi.ru/2022/09/13/2287424.jpg",
-               "https://im.wampi.ru/2022/09/13/maxresdefault12c93a8a34732de8.jpg",
-               "https://ie.wampi.ru/2022/09/13/9523168_9196231.jpg",
-               "https://im.wampi.ru/2022/09/13/5f61e84602e8bd36dd7a14cb.jpg",
-               "https://im.wampi.ru/2022/09/13/ui-5f61e683ae2691.07113988.jpg",
-               "https://ie.wampi.ru/2022/09/13/i.jpg", "https://im.wampi.ru/2022/09/13/3761517_5329392.jpg"]
+
 
 
 leha_description = ['хуи тебе в жопу', 'Залупа конская', 'Хуй моржовый', 'Гандон штопаный', 'Пердун старый',
@@ -82,7 +75,7 @@ my_description = ['красивый','стильный','большой','шир
                   'грандиозный','крутой','дружелюбный','приветливый','честный','старательный','шикарный','верующий',
                   'сердечный','железный','легендарный','восхитительный','везучий']
 
-chat_id_sport = '-1001602667352'
+
 chat_id_pp = '-699209652'
 chat_ip_test = '-704260604'
 date_sigi = datetime.datetime(2022, 7, 9)
@@ -95,9 +88,9 @@ yes_smoking = datetime.datetime.today() - date_leha
 TOKEN = '5469997908:AAF9dvJHuKU6mmMGqLJiELUftvB2CjkT7XA'
 bot = telebot.TeleBot(TOKEN)
 
-if (datetime.datetime.today().weekday() == 0):
-    bot.send_poll(chat_id_pp, 'вот и неделя прошла',
-                  options=['я приду', 'я сегодня обсасываю и у меня проблемы с головой'], is_anonymous=0)
+# if (datetime.datetime.today().weekday() == 0):
+#     bot.send_poll(chat_id_pp, 'вот и неделя прошла',
+#                   options=['я приду', 'я сегодня обсасываю и у меня проблемы с головой'], is_anonymous=0)
 
 cat_api = "bab91c64-f22f-44af-a791-c0514b88618e"
 cat_header = {
@@ -106,10 +99,10 @@ cat_header = {
 response = requests.get(url="https://api.thecatapi.com/v1/images/search/", headers=cat_header)
 image = response.json()[0]["url"]
 
-bot.send_photo(chat_id=chat_ip_test, photo=image, caption=f"Володя, {random.choice(my_description)}, ты не куришь уже "
-                                                          f"{plural_days(no_siging_smoking.days)} и не паришь уже "
-                                                          f"{plural_days(no_paring_vaping.days)}\nДавай будь здоров "
-                                                          f"и всего хорошего!")
+# bot.send_photo(chat_id=chat_ip_test, photo=image, caption=f"Володя, {random.choice(my_description)}, ты не куришь уже "
+#                                                           f"{plural_days(no_siging_smoking.days)} и не паришь уже "
+#                                                           f"{plural_days(no_paring_vaping.days)}\nДавай будь здоров "
+#                                                           f"и всего хорошего!")
 
 response = requests.get(url="https://api.thecatapi.com/v1/images/search/", headers=cat_header)
 image = response.json()[0]["url"]
@@ -117,31 +110,4 @@ image = response.json()[0]["url"]
 bot.send_photo(chat_id=chat_ip_test, photo=image, caption=f"Леха, {random.choice(leha_description).lower()}, ты куришь уже "
                                                           f"{plural_days(yes_smoking.days)} мои поздравления!!! "
                                                           f"\nДавай, бля, топи {random.choice(leha_description).lower()}, друг!")
-
-hvat = ['УЗКИМ ХВАТОМ', 'ШИРОКИМ ХВАТОМ', 'ОБЫЧНЫМ ХВАТОМ']
-
-bot.send_photo(chat_id=chat_id_sport, photo=random.choice(tesak_image),
-               caption=f"ЭЙ, {random.choice(my_description).upper()}, ЗАДАНИЕ ОТ ТЕСАКА:\n\n{random.randint(17,25)} "
-                       f"ДИКИХ ОТЖИМАНИЙ {random.choice(hvat)} НА ВИДЕО,"
-                       f"\nИНАЧЕ ТЫ {random.choice(leha_description).upper()}")
-
-chat_id_iting = "235204224"
-
-date_eating = datetime.datetime(2022, 9, 13)
-no_eating = datetime.datetime.today() - date_eating
-end_eating_text = f"УЖЕ {plural_days(no_eating.days)}, НЕ СДАВАЙСЯ, ТОЛЬКО ВПЕРЕД.\n\n"
-
-response = requests.get(url="https://favqs.com/api/qotd")
-original_text = response.json()['quote']['body']
-author = response.json()['quote']['author']
-
-translate_body = {
-    "key": "trnsl.1.1.20220913T201831Z.62c222874c816eb0.2586ebb660ffedc36f027f5d0027ba3f56776039",
-    "text": original_text,
-    "lang": "en-ru",
-}
-
-response = requests.post(url="https://translate.yandex.net/api/v1.5/tr.json/translate",  data=translate_body)
-end_eating_text += f"{original_text}\n\n{response.json()['text'][0]}\n\n@{author}"
-random_fox = f"https://randomfox.ca/images/{random.randint(1, 121)}.jpg"
-bot.send_photo(chat_id=chat_id_iting, photo=random_fox, caption=end_eating_text)
+image_2 =
